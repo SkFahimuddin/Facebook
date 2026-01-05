@@ -46,5 +46,5 @@ foreign key (wall_owner_id) references users(id) on delete cascade
 INSERT INTO users (email, password, first_name, last_name, gender, birthday) 
 VALUES 
 ('mark@harvard.edu', MD5('password123'), 'Mark', 'Zuckerberg', 'Male', '1984-05-14'),
-('eduardo@harvard.edu', MD5('password123'), 'Eduardo', 'Saverin', 'Male', '1982-03-19');users
+('eduardo@harvard.edu', MD5('password123'), 'Eduardo', 'Saverin', 'Male', '1982-03-19');
 
