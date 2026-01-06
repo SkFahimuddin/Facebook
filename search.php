@@ -132,7 +132,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
                         <div class="result-info">
                             <?php echo htmlspecialchars($user['email']); ?>
                         </div>
-                        <?php if ($user['relationship_status']): ?>
+                        <?php if (isset($user['relationship_status']) && $user['relationship_status']): ?>
                         <div class="result-info">
                             <?php echo htmlspecialchars($user['relationship_status']); ?>
                         </div>
