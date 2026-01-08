@@ -426,7 +426,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload_pic']) && $is_o
                                     <img src="uploads/<?php echo htmlspecialchars($friend_pics[$i]['profile_pic']); ?>" 
                                          alt="<?php echo htmlspecialchars($friend_pics[$i]['first_name']); ?>" 
                                          class="friend-pic"
-                                         onerror="this.src='https://via.placeholder.com/50x50/cccccc/666666?text=No+Pic'">
+                                         onerror="this.onerror=null; this.src='uploads/default.jpg';">
                                 </a>
                                 <div class="friend-name">
                                     <a href="profile.php?id=<?php echo $friend_pics[$i]['id']; ?>" class="blue-link">
@@ -482,14 +482,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload_pic']) && $is_o
                             <tr>
                                 <td class="info-label">Screen name:</td>
                                 <td class="info-value"><?php echo htmlspecialchars(explode('@', $profile_user['email'])[0]); ?></td>
-                            </tr>
-                            <tr>
-                                <td class="info-label">Mobile:</td>
-                                <td class="info-value">+1-xxx-xxx-xxxx</td>
-                            </tr>
-                            <tr>
-                                <td class="info-label">Website:</td>
-                                <td class="info-value"><a href="#" class="blue-link">http://www.example.com</a></td>
                             </tr>
                         </table>
                     </div>
