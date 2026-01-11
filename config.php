@@ -12,7 +12,7 @@ define('DB_PASSWORD', '');      // Default XAMPP password (empty)
 define('DB_NAME', 'thefacebook');
 
 // Create connection
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, 3307);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
 
 // Check connection
 if (!$conn) {
