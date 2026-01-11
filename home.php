@@ -110,6 +110,22 @@ $requests_result = mysqli_query($conn, $requests_query);
         .profile-link:hover {
             text-decoration: underline;
         }
+        .info-table {
+            width: 100%;
+        }
+        .info-table td {
+            padding: 3px 5px;
+            font-size: 11px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #666;
+            width: 120px;
+            vertical-align: top;
+        }
+        .info-value {
+            color: #3B5998;
+        }
         .sidebar {
             width: 280px;
             background-color: #d8dfea;
@@ -235,9 +251,24 @@ $requests_result = mysqli_query($conn, $requests_query);
                          onerror="this.src='https://via.placeholder.com/150x150/cccccc/666666?text=Photo'">
                 </div>
                 <div class="profile-info">
-                    <a href="#" class="profile-link"><strong>Harvard University</strong></a>
-                    <a href="#" class="profile-link"><strong>Kirkland House</strong></a>
-                    <a href="#" class="profile-link"><strong>Computer Science</strong></a>
+                    <table class="info-table">
+                        <tr>
+                            <td class="info-label">Member Since:</td>
+                            <td class="info-value"><?php echo date('F j, Y', strtotime($current_user['joined_date'])); ?></td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Last Update:</td>
+                            <td class="info-value"><?php echo date('F j, Y', strtotime($current_user['joined_date'])); ?></td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Email:</td>
+                            <td class="info-value"><?php echo htmlspecialchars($current_user['email']); ?></td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Screen name:</td>
+                            <td class="info-value"><?php echo htmlspecialchars(explode('@', $current_user['email'])[0]); ?></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
