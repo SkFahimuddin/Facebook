@@ -27,7 +27,7 @@ function clean_input($data) {
     global $conn;
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
+    // Remove htmlspecialchars from here - only escape for SQL
     return mysqli_real_escape_string($conn, $data);
 }
 
