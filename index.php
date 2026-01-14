@@ -345,11 +345,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
                 </div>
 
                 <div class="footer">
-                    <a href="#">about</a>
-                    <a href="#">contact</a>
-                    <a href="#">faq</a>
-                    <a href="#">terms</a>
-                    <a href="#">privacy</a>
+                    <a href="about.php">about</a>
+                    <a href="contact.php">contact</a>
+                    <a href="faq.php">faq</a>
+                    <a href="terms.php">terms</a>
+                    <a href="privacy.php">privacy</a>
                     <br>
                     <div style="margin-top: 8px;">a Sk Fahimuddin production</div>
                     <div style="margin-top: 3px;">Thefacebook © 2004</div>
