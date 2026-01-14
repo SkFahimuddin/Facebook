@@ -338,7 +338,7 @@ $wall_result = mysqli_query($conn, $wall_query);
             <div class="header-nav">
                 <a href="home.php">Home</a>
                 <a href="profile.php?id=<?php echo $current_user['id']; ?>">My Profile</a>
-                <a href="search.php">My Friends</a>
+                <a href="myfriends.php">My Friends</a>
                 <a href="search.php">Search</a>
                 <a href="messages.php">Messages</a>
                 <a href="groups.php">Groups</a>
