@@ -340,7 +340,7 @@ $wall_result = mysqli_query($conn, $wall_query);
                 <a href="search.php">My Friends</a>
                 <a href="search.php">Search</a>
                 <a href="messages.php">Messages</a>
-                <a href="#">Groups</a>
+                <a href="groups.php">Groups</a>
                 <a href="logout.php">Logout</a>
             </div>
         </div>
@@ -499,12 +499,34 @@ $wall_result = mysqli_query($conn, $wall_query);
             <div class="sidebar-section">
                 <div class="sidebar-header">My Groups</div>
                 <div class="sidebar-content">
-                    <div class="group-item">
-                        <a href="#">CS Majors</a>
-                    </div>
-                    <div class="group-item">
-                        <a href="#">Kirkland House Residents</a>
-                    </div>
+                    <?php
+                    // Get user's groups
+                    $user_groups_query = "SELECT g.id, g.group_name 
+                                          FROM groups g
+                                          INNER JOIN group_members gm ON g.id = gm.group_id
+                                          WHERE gm.user_id = {$current_user['id']}
+                                          ORDER BY g.created_date DESC
+                                          LIMIT 5";
+                    $user_groups_result = mysqli_query($conn, $user_groups_query);
+                    
+                    if (mysqli_num_rows($user_groups_result) > 0):
+                        while ($user_group = mysqli_fetch_assoc($user_groups_result)):
+                    ?>
+                        <div class="group-item">
+                            <a href="group_detail.php?id=<?php echo $user_group['id']; ?>">
+                                <?php echo htmlspecialchars($user_group['group_name']); ?>
+                            </a>
+                        </div>
+                    <?php 
+                        endwhile;
+                    else:
+                    ?>
+                        <div style="color: #666; font-size: 10px; padding: 5px;">
+                            You haven't joined any groups yet. 
+                            <a href="groups.php" style="color: #3B5998;">Browse groups!</a>
+                        </div>
+                    <?php endif; ?>
+                    <a href="groups.php" class="view-all-link">View All Groups</a>
                 </div>
             </div>
 
