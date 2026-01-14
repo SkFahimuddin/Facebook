@@ -336,6 +336,7 @@ $wall_result = mysqli_query($conn, $wall_query);
         <div class="header-content">
             <a href="home.php" class="logo">thefacebook</a>
             <div class="header-nav">
+                <a href="home.php">Home</a>
                 <a href="profile.php?id=<?php echo $current_user['id']; ?>">My Profile</a>
                 <a href="search.php">My Friends</a>
                 <a href="search.php">Search</a>

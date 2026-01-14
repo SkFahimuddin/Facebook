@@ -135,49 +135,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload_pic']) && $is_o
         }
         .header {
             background-color: #3B5998;
-            padding: 5px 10px;
+            padding: 8px 15px;
             color: white;
+            border-bottom: 1px solid #29447e;
         }
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: white;
             text-decoration: none;
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .header-nav {
-            display: inline-block;
         }
         .header-nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
             font-size: 11px;
         }
         .header-nav a:hover {
             text-decoration: underline;
-        }
-        .search-box {
-            float: right;
-            margin-top: 3px;
-        }
-        .search-box input[type="text"] {
-            padding: 2px 5px;
-            font-size: 11px;
-            border: 1px solid #ccc;
-        }
-        .search-box input[type="submit"] {
-            padding: 2px 8px;
-            font-size: 11px;
-            background-color: #6d84b4;
-            color: white;
-            border: 1px solid #29447e;
-            cursor: pointer;
         }
         .container {
             max-width: 1200px;
@@ -389,21 +371,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload_pic']) && $is_o
 <body>
     <div class="header">
         <div class="header-content">
-            <a href="home.php" class="logo">[thefacebook]</a>
+            <a href="home.php" class="logo">thefacebook</a>
             <div class="header-nav">
-                <a href="home.php">home</a>
-                <a href="search.php">search</a>
-                <a href="profile.php?id=<?php echo $current_user['id']; ?>">profile</a>
-                <a href="messages.php">messages</a>
-                <a href="logout.php">logout</a>
+                <a href="home.php">Home</a>
+                <a href="profile.php?id=<?php echo $current_user['id']; ?>">My Profile</a>
+                <a href="search.php">My Friends</a>
+                <a href="search.php">Search</a>
+                <a href="messages.php">Messages</a>
+                <a href="groups.php">Groups</a>
+                <a href="logout.php">Logout</a>
             </div>
-            <div class="search-box">
-                <form method="GET" action="search.php" style="margin: 0;">
-                    <input type="text" name="q" placeholder="quick search" size="15">
-                    <input type="submit" value="go">
-                </form>
-            </div>
-            <div style="clear: both;"></div>
         </div>
     </div>
 
@@ -694,17 +671,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload_pic']) && $is_o
                     }
                     ?>
                 </div>
+                
+                <div class="footer">
+                    <a href="#">about</a>
+                    <a href="#">contact</a>
+                    <a href="#">faq</a>
+                    <a href="#">terms</a>
+                    <a href="#">privacy</a>
+                    <br>
+                    <div style="margin-top: 8px;">a Sk Fahimuddin production</div>
+                    <div style="margin-top: 3px;">Thefacebook © 2004</div>
+                </div>
             </div>
-        </div>
-        <div class="footer">
-            <a href="#">about</a>
-            <a href="#">contact</a>
-            <a href="#">faq</a>
-            <a href="#">terms</a>
-            <a href="#">privacy</a>
-            <br>
-            <div style="margin-top: 8px;">a Sk Fahimuddin production</div>
-            <div style="margin-top: 3px;">Thefacebook © 2004</div>
         </div>
     </div>
 </body>
